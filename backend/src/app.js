@@ -12,6 +12,8 @@ const logger = require("./utils/logger");
 const app = express();
 app.use(helmet());
 
+const PORT = process.env.PORT || 5000;
+
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
@@ -62,8 +64,8 @@ app.use(errorHandler);
 connectDb()
   .then(() => {
     logger.info("Database connected");
-    app.listen(process.env.PORT, () => {
-      logger.info(`Server started on port ${process.env.PORT}`);
+    app.listen(PORT, () => {
+      logger.info(`Server started on port ${PORT}`);
     });
   })
   .catch((err) => {
