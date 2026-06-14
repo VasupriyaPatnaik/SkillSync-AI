@@ -14,9 +14,13 @@ const connectDb = async () => {
       w: 'majority'
     });
     logger.info("Database connected successfully");
+    return true;
   } catch (err) {
     logger.error("Error in connection", { message: err.message });
-    process.exit(1);
+    if (process.env.NODE_ENV === "production") {
+      process.exit(1);
+    }
+    return false;
   }
 };
 
