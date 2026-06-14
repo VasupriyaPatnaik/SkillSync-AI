@@ -17,7 +17,7 @@
 
 ## 🚀 Live Demo
 
-[https://skillsync-ai-6xsf.onrender.com](https://skillsync-ai-6xsf.onrender.com)
+[https://skilllsyncai.vercel.app/](https://skilllsyncai.vercel.app/)
 
 ---
 
