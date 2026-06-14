@@ -62,8 +62,12 @@ app.use(errorHandler);
 
 
 connectDb()
-  .then(() => {
-    logger.info("Database connected");
+  .then((connected) => {
+    if (!connected) {
+      logger.warn("Starting server without an active MongoDB connection");
+    } else {
+      logger.info("Database connected");
+    }
     app.listen(PORT, () => {
       logger.info(`Server started on port ${PORT}`);
     });
