@@ -17,7 +17,7 @@
 
 ## 🚀 Live Demo
 
-- **Frontend**: [https://skillsync-ai-6xsf.onrender.com](https://skillsync-ai-6xsf.onrender.com)
+[https://skillsync-ai-6xsf.onrender.com](https://skillsync-ai-6xsf.onrender.com)
 
 ---
 
