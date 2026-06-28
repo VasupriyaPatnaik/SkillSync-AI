@@ -27,10 +27,16 @@ authRouter.post("/signup", validate(schemas.signup), async (req, res) => {
     });
     await user.save();
     return sendSuccess(res, { user }, "User Created Successfully");
-  } catch (err) {
-    logger.error("Signup error", { message: err.message });
-    return sendError(res, err.message, 500);
-  }
+} catch (err) {
+  console.log("========== ERROR ==========");
+  console.error(err);
+  console.error(err.stack);
+
+  return res.status(500).json({
+    error: err.message,
+    stack: err.stack, // temporary for debugging
+  });
+}
 });
 
 authRouter.post("/login", validate(schemas.login), async (req, res) => {
