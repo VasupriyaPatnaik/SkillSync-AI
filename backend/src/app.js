@@ -75,3 +75,10 @@ connectDb()
   .catch((err) => {
     logger.error("Server startup error", { message: err.message });
   });
+
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "SkillSync AI Backend is running 🚀",
+  });
+});
