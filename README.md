@@ -15,11 +15,17 @@
 
 ---
 
+## 🚀 Live Demo
+
+[https://skilllsyncai.vercel.app/](https://skilllsyncai.vercel.app/)
+
+---
+
 ## 📋 Overview
 
-**SkillSync-AI** is an intelligent platform that analyzes developer profiles across multiple coding platforms and matches them with job opportunities using advanced **vector embeddings** and **machine learning**.
+**SkillSync-AI** is an intelligent platform that analyzes developer profiles across multiple coding platforms and matches them with job opportunities using advanced **vector embeddings** and **cosine similarity**.
 
-Instead of traditional keyword matching, our system understands the *semantic meaning* of a developer's skills, experience, and coding practice—just like Netflix recommends movies based on what you'll actually enjoy, we match developers to jobs they'll excel in.
+Instead of traditional keyword matching, our system understands the *semantic meaning* of a developer's skills, experience, and coding practice—just like Netflix recommends movies based on what you enjoy watching.
 
 ### 🎯 The Problem We Solve
 
@@ -63,22 +69,22 @@ Instead of traditional keyword matching, our system understands the *semantic me
 ## 🏗️ System Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
+┌────────────────────────────────────────────────────────────────┐
 │                        USER INTERFACE                            │
 │                    (React 19 + Tailwind)                         │
-└────────────────┬────────────────────────────────────────────────┘
+└────────────────┬───────────────────────────────────────────────┘
                  │
-┌────────────────▼────────────────────────────────────────────────┐
+┌────────────────▼───────────────────────────────────────────────┐
 │                      EXPRESS.JS BACKEND                          │
 │  ┌─────────────┐  ┌─────────────┐  ┌──────────────────────┐   │
 │  │   Auth      │  │   APIs      │  │   Data Processing    │   │
 │  │  Routes     │  │  for        │  │   - Upload handler   │   │
 │  │             │  │  Platforms  │  │   - Resume parser    │   │
 │  └─────────────┘  └─────────────┘  └──────────────────────┘   │
-└────────────────┬────────────────────────────────────────────────┘
+└────────────────┬───────────────────────────────────────────────┘
                  │
-        ┌────────┼────────┐
-        │                 │
+         ┌────────┼────────┐
+         │                 │
 ┌───────▼────┐   ┌────────▼────────────┐
 │  MongoDB   │   │   Python Services   │
 │  Database  │   │  ┌────────────────┐ │
