@@ -8,14 +8,21 @@ async function fetchGithub(username) {
   };
 
   try {
-    const { data: user } = await axios.get(
-      `https://api.github.com/users/${username}`,
-      { headers, validateStatus: (status) => status < 500 }
-    );
+    const response = await axios.get(
+  `https://api.github.com/users/${username}`,
+  {
+    headers,
+    validateStatus: () => true,
+  }
+);
 
-    if (!user || user.message) {
-      throw new Error(`User ${username} not found on GitHub`);
-    }
+if (response.status !== 200) {
+  throw new Error(
+    `GitHub API ${response.status}: ${response.data.message}`
+  );
+}
+
+const user = response.data;
 
     const { data: repos } = await axios.get(
       `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
