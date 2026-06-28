@@ -38,7 +38,7 @@ def embed(text: str) -> np.ndarray:
     return vector
 
 def load_data(db, user_object_id):
-    """Load combined profile and resume data from MongoDB"""
+    """Load combined profile and resume data from MongoDB."""
     profile = db.combineddatas.find_one({"userId": user_object_id})
     resume = db.resumeparseddatas.find_one({"userId": user_object_id})
     return profile, resume
@@ -165,6 +165,7 @@ def preprocess_user(user_id: str):
         return {"success": False, "error": "Combined profile missing"}
     if not resume:
         return {"success": False, "error": "Resume data missing"}
+
 
     print("\n" + "="*70)
     print("📊 PREPROCESSING - PROFILE DATA")
