@@ -1,4 +1,5 @@
-flask
+Flask
+gunicorn
 pymongo
 python-dotenv
 numpy
