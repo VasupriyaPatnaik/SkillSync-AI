@@ -145,12 +145,10 @@ userSchema.index({ createdAt: -1 });
 userSchema.index({ updatedAt: -1 });
 
 // ================= PASSWORD HASHING =================
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
+userSchema.pre("save", async function () {
+  if (!this.isModified("password")) return;
 
-  const hashedPassword = await bcrypt.hash(this.password, 10);
-  this.password = hashedPassword;
-  next();
+  this.password = await bcrypt.hash(this.password, 10);
 });
 
 // ================= JWT METHOD =================
