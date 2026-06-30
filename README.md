@@ -17,7 +17,7 @@
 
 ## 🚀 Live Demo
 
-[https://skilllsyncai.vercel.app/](https://skilllsyncai.vercel.app/)
+[https://skillsync-aii.vercel.app/](https://skillsync-aii.vercel.app/)
 
 ---
 
